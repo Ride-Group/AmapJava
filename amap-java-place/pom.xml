@@ -9,9 +9,9 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>amap-java-geo</artifactId>
+  <artifactId>amap-java-place</artifactId>
   <name>AmapJava - Amap Java SDK</name>
-  <description>高德地图地理编码 Java SDK</description>
+  <description>高德地图搜索 Java SDK</description>
 
   <dependencies>
     <dependency>

@@ -1,0 +1,13 @@
+package me.zhangchunsheng.amap.common.constant;
+
+/**
+ * <pre>
+ * 高德地图错误码
+ * Created by Chunsheng Zhang on 2020/4/20.
+ * </pre>
+ *
+ * @author <a href="https://github.com/zhangchunsheng">Chunsheng Zhang</a>
+ */
+public class AmapErrorCode {
+    public static final String STATUS_ZERO = "Request Fail";
+}

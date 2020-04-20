@@ -1,4 +1,4 @@
-package com.github.zhangchunsheng.amapgeo.bean;
+package me.zhangchunsheng.amap.common.bean;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class AmapGeoApiData {
+public class AmapApiData {
     /**
      * 接口请求地址
      */
@@ -42,7 +42,7 @@ public class AmapGeoApiData {
      * @param responseData 响应数据
      * @param exceptionMsg 接口请求异常信息
      */
-    public AmapGeoApiData(String url, String requestData, String responseData, String exceptionMsg) {
+    public AmapApiData(String url, String requestData, String responseData, String exceptionMsg) {
         this.url = url;
         this.requestData = requestData;
         this.responseData = responseData;

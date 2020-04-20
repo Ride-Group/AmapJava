@@ -1,4 +1,4 @@
-package com.github.zhangchunsheng.amapgeo.exception;
+package me.zhangchunsheng.amap.common.exception;
 
 import com.google.common.base.Joiner;
 import lombok.Data;
@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class AmapGeoException extends Exception {
+public class AmapException extends Exception {
     private static final long serialVersionUID = 2214381471513460742L;
 
     /**
@@ -36,27 +36,27 @@ public class AmapGeoException extends Exception {
     private String returnInfoCode;
 
     /**
-     * Instantiates a new Amap geo exception.
+     * Instantiates a new Amap exception.
      *
      * @param customErrorMsg the custom error msg
      */
-    public AmapGeoException(String customErrorMsg) {
+    public AmapException(String customErrorMsg) {
         super(customErrorMsg);
         this.customErrorMsg = customErrorMsg;
     }
 
     /**
-     * Instantiates a new Amap geo exception.
+     * Instantiates a new Amap exception.
      *
      * @param customErrorMsg the custom error msg
      * @param tr             the tr
      */
-    public AmapGeoException(String customErrorMsg, Throwable tr) {
+    public AmapException(String customErrorMsg, Throwable tr) {
         super(customErrorMsg, tr);
         this.customErrorMsg = customErrorMsg;
     }
 
-    private AmapGeoException(Builder builder) {
+    private AmapException(Builder builder) {
         super(builder.buildErrorMsg());
         returnStatus = builder.returnStatus;
         returnInfo = builder.returnInfo;
@@ -66,14 +66,14 @@ public class AmapGeoException extends Exception {
     /**
      * 通过BaseWxPayResult生成异常对象.
      *
-     * @param geoBaseResult the geo base result
+     * @param baseResult the base result
      * @return the wx pay exception
      */
-    public static AmapGeoException from(com.github.zhangchunsheng.amapgeo.bean.result.BaseAmapGeoResult geoBaseResult) {
-        return AmapGeoException.newBuilder()
-                .returnStatus(geoBaseResult.getStatus())
-                .returnInfo(geoBaseResult.getInfo())
-                .returnInfoCode(geoBaseResult.getInfoCode())
+    public static AmapException from(me.zhangchunsheng.amap.common.bean.result.BaseAmapResult baseResult) {
+        return AmapException.newBuilder()
+                .returnStatus(baseResult.getStatus())
+                .returnInfo(baseResult.getInfo())
+                .returnInfoCode(baseResult.getInfoCode())
                 .build();
     }
 
@@ -135,8 +135,8 @@ public class AmapGeoException extends Exception {
          *
          * @return the amap geo exception
          */
-        public AmapGeoException build() {
-            return new AmapGeoException(this);
+        public AmapException build() {
+            return new AmapException(this);
         }
 
         /**

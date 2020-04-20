@@ -25,7 +25,7 @@ public interface GeoService {
     /**
      * 获取高德地图请求url前缀
      *
-     * @return the pay base url
+     * @return the geo base url
      */
     String getGeoBaseUrl();
 
