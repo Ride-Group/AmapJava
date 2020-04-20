@@ -21,22 +21,22 @@ import java.util.Map;
  */
 public interface GeoService {
 
-  /**
-   * 获取高德地图请求url前缀
-   *
-   * @return the pay base url
-   */
-  String getGeoBaseUrl();
+    /**
+     * 获取高德地图请求url前缀
+     *
+     * @return the pay base url
+     */
+    String getGeoBaseUrl();
 
-  public AmapGeoConfig getConfig();
+    public AmapGeoConfig getConfig();
 
-  public void setConfig(AmapGeoConfig config);
+    public void setConfig(AmapGeoConfig config);
 
-  public byte[] postForBytes(String url, String requestStr) throws AmapGeoException;
+    public byte[] postForBytes(String url, String requestStr) throws AmapGeoException;
 
-  public String post(String url, String requestStr) throws AmapGeoException;
+    public String post(String url, String requestStr) throws AmapGeoException;
 
-  public String get(String url) throws AmapGeoException;
+    public String get(String url) throws AmapGeoException;
 
     public GeoResult geo(String address) throws AmapGeoException;
 
