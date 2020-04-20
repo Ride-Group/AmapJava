@@ -15,6 +15,11 @@ GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
     <artifactId>amap-java</artifactId>
     <version>1.0.0</version>
 </dependency>
+<dependency>
+    <groupId>com.github.zhangchunsheng</groupId>
+    <artifactId>amap-java-geo</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ### 高德geo
