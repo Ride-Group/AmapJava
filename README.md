@@ -1,6 +1,23 @@
 # AmapJava
 Amap java
 
+### 使用SDK
+```java
+// spring boot, inject geoService
+GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
+```
+
+### maven
+### Maven 引用方式
+```xml
+<dependency>
+    <groupId>com.github.zhangchunsheng</groupId>
+    <artifactId>amap-java</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### 高德geo
 ```json
 {
     "status" : "1",
