@@ -50,3 +50,13 @@ GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
     ]
 }
 ```
+
+## 捐助 donate
+
+支付宝
+
+![alipay](https://wx4.sinaimg.cn/mw690/46b94231ly1ge0okee0fej20ec0e6gp3.jpg)
+
+微信
+
+![wechat](https://wx4.sinaimg.cn/mw690/46b94231ly1ge0okecldyj20e80e8n0c.jpg)
