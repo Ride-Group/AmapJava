@@ -1,10 +1,15 @@
 package com.github.zhangchunsheng.amapgeo.service.impl;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import javax.net.ssl.SSLContext;
 
 import com.github.zhangchunsheng.amapgeo.bean.AmapGeoApiData;
+import com.github.zhangchunsheng.amapgeo.bean.result.GeoResult;
+import com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig;
+import com.github.zhangchunsheng.amapgeo.constant.AmapGeoConstants;
 import com.github.zhangchunsheng.amapgeo.exception.AmapGeoException;
 import jodd.util.Base64;
 import org.apache.commons.lang3.StringUtils;
@@ -14,6 +19,7 @@ import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -54,6 +60,32 @@ public class AmapGeoServiceApacheHttpImpl extends BaseGeoServiceImpl {
         } catch (Exception e) {
             this.log.error("\n【请求地址】：{}\n【请求数据】：{}\n【异常信息】：{}", url, requestStr, e.getMessage());
             amapApiData.set(new AmapGeoApiData(url, requestStr, null, e.getMessage()));
+            throw new AmapGeoException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public String get(String url) throws AmapGeoException {
+        try {
+            HttpClientBuilder httpClientBuilder = this.createHttpClientBuilder();
+            HttpGet httpGet = this.createHttpGet(url);
+            try (CloseableHttpClient httpClient = httpClientBuilder.build()) {
+                try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
+                    String responseString = EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
+                    this.log.info("\n【请求地址】：{}\n【请求数据】：{}\n【响应数据】：{}", url, "", responseString);
+                    if (this.getConfig().isIfSaveApiData()) {
+                        amapApiData.set(new AmapGeoApiData(url, "", responseString, null));
+                    }
+                    return responseString;
+                }
+            } finally {
+                httpGet.releaseConnection();
+            }
+        } catch (Exception e) {
+            this.log.error("\n【请求地址】：{}\n【请求数据】：{}\n【异常信息】：{}", url, "", e.getMessage());
+            if (this.getConfig().isIfSaveApiData()) {
+                amapApiData.set(new AmapGeoApiData(url, "", null, e.getMessage()));
+            }
             throw new AmapGeoException(e.getMessage(), e);
         }
     }
@@ -123,5 +155,17 @@ public class AmapGeoServiceApacheHttpImpl extends BaseGeoServiceImpl {
                 .build());
 
         return httpPost;
+    }
+
+    private HttpGet createHttpGet(String url) {
+        HttpGet httpGet = new HttpGet(url);
+
+        httpGet.setConfig(RequestConfig.custom()
+                .setConnectionRequestTimeout(this.getConfig().getHttpConnectionTimeout())
+                .setConnectTimeout(this.getConfig().getHttpConnectionTimeout())
+                .setSocketTimeout(this.getConfig().getHttpTimeout())
+                .build());
+
+        return httpGet;
     }
 }

@@ -63,12 +63,53 @@ public class AmapGeoServiceJoddHttpImpl extends BaseGeoServiceImpl {
         }
     }
 
+    @Override
+    public String get(String url) throws AmapGeoException {
+        try {
+            HttpRequest request = this.buildHttpGet(url);
+            String responseString = this.getResponseString(request.send());
+
+            this.log.info("\n【请求地址】：{}\n【请求数据】：{}\n【响应数据】：{}", url, "", responseString);
+            if (this.getConfig().isIfSaveApiData()) {
+                amapApiData.set(new AmapGeoApiData(url, "", responseString, null));
+            }
+            return responseString;
+        } catch (Exception e) {
+            this.log.error("\n【请求地址】：{}\n【请求数据】：{}\n【异常信息】：{}", url, "", e.getMessage());
+            amapApiData.set(new AmapGeoApiData(url, "", null, e.getMessage()));
+            throw new AmapGeoException(e.getMessage(), e);
+        }
+    }
+
     private HttpRequest buildHttpRequest(String url, String requestStr) throws AmapGeoException {
         HttpRequest request = HttpRequest
                 .post(url)
                 .timeout(this.getConfig().getHttpTimeout())
                 .connectionTimeout(this.getConfig().getHttpConnectionTimeout())
                 .bodyText(requestStr);
+
+        if (StringUtils.isNotBlank(this.getConfig().getHttpProxyHost()) && this.getConfig().getHttpProxyPort() > 0) {
+            if (StringUtils.isEmpty(this.getConfig().getHttpProxyUsername())) {
+                this.getConfig().setHttpProxyUsername("whatever");
+            }
+
+            ProxyInfo httpProxy = new ProxyInfo(ProxyType.HTTP, this.getConfig().getHttpProxyHost(), this.getConfig().getHttpProxyPort(),
+                    this.getConfig().getHttpProxyUsername(), this.getConfig().getHttpProxyPassword());
+            HttpConnectionProvider provider = request.connectionProvider();
+            if (null == provider) {
+                provider = new SocketHttpConnectionProvider();
+            }
+            provider.useProxy(httpProxy);
+            request.withConnectionProvider(provider);
+        }
+        return request;
+    }
+
+    private HttpRequest buildHttpGet(String url) throws AmapGeoException {
+        HttpRequest request = HttpRequest
+                .get(url)
+                .timeout(this.getConfig().getHttpTimeout())
+                .connectionTimeout(this.getConfig().getHttpConnectionTimeout());
 
         if (StringUtils.isNotBlank(this.getConfig().getHttpProxyHost()) && this.getConfig().getHttpProxyPort() > 0) {
             if (StringUtils.isEmpty(this.getConfig().getHttpProxyUsername())) {

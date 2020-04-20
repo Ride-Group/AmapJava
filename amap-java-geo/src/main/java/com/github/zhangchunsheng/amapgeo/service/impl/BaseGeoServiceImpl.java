@@ -1,7 +1,10 @@
 package com.github.zhangchunsheng.amapgeo.service.impl;
 
 import com.github.zhangchunsheng.amapgeo.bean.AmapGeoApiData;
+import com.github.zhangchunsheng.amapgeo.bean.result.GeoResult;
 import com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig;
+import com.github.zhangchunsheng.amapgeo.constant.AmapGeoConstants;
+import com.github.zhangchunsheng.amapgeo.exception.AmapGeoException;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
 import jodd.io.ZipUtil;
@@ -26,33 +29,38 @@ import java.util.zip.ZipException;
  * @author <a href="https://github.com/zhangchunsheng">Chunsheng Zhang</a>
  */
 public abstract class BaseGeoServiceImpl implements com.github.zhangchunsheng.amapgeo.service.GeoService {
-  /**
-   * The Log.
-   */
-  final Logger log = LoggerFactory.getLogger(this.getClass());
-  /**
-   * The constant wxApiData.
-   */
-  static ThreadLocal<AmapGeoApiData> amapApiData = new ThreadLocal<>();
+    /**
+     * The Log.
+     */
+    final Logger log = LoggerFactory.getLogger(this.getClass());
+    /**
+     * The constant wxApiData.
+     */
+    static ThreadLocal<AmapGeoApiData> amapApiData = new ThreadLocal<>();
 
-  /**
-   * The Config.
-   */
-  protected AmapGeoConfig config;
+    /**
+     * The Config.
+     */
+    protected AmapGeoConfig config;
 
-  @Override
-  public AmapGeoConfig getConfig() {
-    return this.config;
-  }
+    @Override
+    public AmapGeoConfig getConfig() {
+        return this.config;
+    }
 
-  @Override
-  public void setConfig(AmapGeoConfig config) {
-    this.config = config;
-  }
+    @Override
+    public void setConfig(AmapGeoConfig config) {
+        this.config = config;
+    }
 
-  @Override
-  public String getGeoBaseUrl() {
-    return this.getConfig().getGeoBaseUrl();
-  }
+    @Override
+    public String getGeoBaseUrl() {
+        return this.getConfig().getGeoBaseUrl();
+    }
 
+    @Override
+    public GeoResult geo(String address) throws AmapGeoException {
+        String responseContent = this.get(String.format(this.getConfig().getGeoBaseUrl() + AmapGeoConstants.Url.GEO, address, this.getConfig().getKey()));
+        return GeoResult.fromJson(responseContent);
+    }
 }

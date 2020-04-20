@@ -21,14 +21,18 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class GeoResult extends BaseAmapGeoResult {
-  private static final long serialVersionUID = -5707576958339934210L;
+    private static final long serialVersionUID = -5707576958339934210L;
 
-  @SerializedName("geocodes")
-  private List<Geocode> geocodes;
+    @SerializedName("geocodes")
+    private List<Geocode> geocodes;
 
-  @Override
-  public String toString() {
-    return AmapGsonBuilder.create().toJson(this);
-  }
+    public static GeoResult fromJson(String json) {
+        return AmapGsonBuilder.create().fromJson(json, GeoResult.class);
+    }
+
+    @Override
+    public String toString() {
+        return AmapGsonBuilder.create().toJson(this);
+    }
 
 }
