@@ -2,6 +2,7 @@ package com.github.zhangchunsheng.amapgeo.service.impl;
 
 import com.github.zhangchunsheng.amapgeo.bean.AmapGeoApiData;
 import com.github.zhangchunsheng.amapgeo.bean.result.GeoResult;
+import com.github.zhangchunsheng.amapgeo.bean.result.RegeoResult;
 import com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig;
 import com.github.zhangchunsheng.amapgeo.constant.AmapGeoConstants;
 import com.github.zhangchunsheng.amapgeo.exception.AmapGeoException;
@@ -62,5 +63,11 @@ public abstract class BaseGeoServiceImpl implements com.github.zhangchunsheng.am
     public GeoResult geo(String address) throws AmapGeoException {
         String responseContent = this.get(String.format(this.getConfig().getGeoBaseUrl() + AmapGeoConstants.Url.GEO, address, this.getConfig().getKey()));
         return GeoResult.fromJson(responseContent);
+    }
+
+    @Override
+    public RegeoResult regeo(String location) throws AmapGeoException {
+        String responseContent = this.get(String.format(this.getConfig().getGeoBaseUrl() + AmapGeoConstants.Url.REGEO, location, this.getConfig().getKey()));
+        return RegeoResult.fromJson(responseContent);
     }
 }

@@ -1,6 +1,7 @@
 package com.github.zhangchunsheng.amapgeo.service;
 
 import com.github.zhangchunsheng.amapgeo.bean.result.GeoResult;
+import com.github.zhangchunsheng.amapgeo.bean.result.RegeoResult;
 import com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig;
 import com.github.zhangchunsheng.amapgeo.exception.AmapGeoException;
 
@@ -39,5 +40,7 @@ public interface GeoService {
     public String get(String url) throws AmapGeoException;
 
     public GeoResult geo(String address) throws AmapGeoException;
+
+    public RegeoResult regeo(String location) throws AmapGeoException;
 
 }

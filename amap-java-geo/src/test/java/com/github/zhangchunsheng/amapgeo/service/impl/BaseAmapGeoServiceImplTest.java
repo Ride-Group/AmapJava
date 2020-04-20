@@ -1,6 +1,7 @@
 package com.github.zhangchunsheng.amapgeo.service.impl;
 
 import com.github.zhangchunsheng.amapgeo.bean.result.GeoResult;
+import com.github.zhangchunsheng.amapgeo.bean.result.RegeoResult;
 import com.github.zhangchunsheng.amapgeo.exception.AmapGeoException;
 import com.github.zhangchunsheng.amapgeo.testbase.ApiTestModule;
 import com.google.inject.Inject;
@@ -32,8 +33,14 @@ public class BaseAmapGeoServiceImplTest {
     private com.github.zhangchunsheng.amapgeo.service.GeoService geoService;
 
     @Test
-    public void testUnifiedOrder() throws AmapGeoException {
+    public void testGeo() throws AmapGeoException {
         GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
+        assertEquals("1", result.getStatus());
+    }
+
+    @Test
+    public void testRego() throws AmapGeoException {
+        RegeoResult result = this.geoService.regeo("116.310003,39.991957");
         assertEquals("1", result.getStatus());
     }
 }

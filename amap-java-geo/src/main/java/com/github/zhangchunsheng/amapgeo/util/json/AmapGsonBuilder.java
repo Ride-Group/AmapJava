@@ -8,7 +8,6 @@ public class AmapGsonBuilder {
 
     static {
         INSTANCE.disableHtmlEscaping();
-
     }
 
     public static Gson create() {
