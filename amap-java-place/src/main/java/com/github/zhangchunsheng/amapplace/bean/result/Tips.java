@@ -26,7 +26,7 @@ public class Tips implements Serializable {
     private String location;
 
     @SerializedName("address")
-    private String address;
+    private Object address;
 
     @SerializedName("typecode")
     private String typecode;
