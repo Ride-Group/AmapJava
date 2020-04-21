@@ -28,13 +28,13 @@ public class BaseAmapPlaceServiceImplTest {
 
     @Test
     public void testInputTips() throws AmapException {
-        InputTips result = this.placeService.inputTips("北京", "一展空间");
+        InputTips result = this.placeService.inputTips("北京", "交易大厦");
         assertEquals("1", result.getStatus());
     }
 
     @Test
     public void testPlaceText() throws AmapException {
-        PoiSearchResult result = this.placeService.placeText("北京", "一展空间", "1", "20");
+        PoiSearchResult result = this.placeService.placeText("北京", "交易大厦", "1", "20");
         assertEquals("1", result.getStatus());
     }
 }
