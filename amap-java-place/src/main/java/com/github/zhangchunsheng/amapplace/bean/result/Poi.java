@@ -29,7 +29,7 @@ public class Poi implements Serializable {
     private String location;
 
     @SerializedName("tel")
-    private String tel;
+    private Object tel;
 
     @SerializedName("website")
     private String website;
