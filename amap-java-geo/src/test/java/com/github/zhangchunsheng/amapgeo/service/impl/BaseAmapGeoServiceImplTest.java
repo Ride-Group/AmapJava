@@ -40,7 +40,7 @@ public class BaseAmapGeoServiceImplTest {
 
     @Test
     public void testRego() throws AmapGeoException {
-        RegeoResult result = this.geoService.regeo("116.310003,39.991957");
+        RegeoResult result = this.geoService.regeo("116.307487,39.984123");
         assertEquals("1", result.getStatus());
     }
 }
