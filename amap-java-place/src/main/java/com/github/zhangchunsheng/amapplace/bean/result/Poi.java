@@ -32,7 +32,7 @@ public class Poi implements Serializable {
     private Object tel;
 
     @SerializedName("website")
-    private String website;
+    private Object website;
 
     @SerializedName("pcode")
     private String pcode;
