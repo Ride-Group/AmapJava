@@ -32,10 +32,10 @@ public class Geocode implements Serializable {
     private String adcode;
 
     @SerializedName("street")
-    private String street;
+    private Object street;
 
     @SerializedName("number")
-    private String number;
+    private Object number;
 
     @SerializedName("location")
     private String location;
