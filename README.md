@@ -1,5 +1,5 @@
 # AmapJava
-Amap java
+Amap Java SDK
 
 ### 使用SDK
 ```java
