@@ -1,5 +1,9 @@
-package com.zhangchunsheng.spring.starter.amapjava.pay.config;
+package com.zhangchunsheng.spring.starter.amapjava.geo.config;
 
+import com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig;
+import com.github.zhangchunsheng.amapgeo.service.GeoService;
+import com.github.zhangchunsheng.amapgeo.service.impl.GeoServiceImpl;
+import com.zhangchunsheng.spring.starter.amapjava.geo.properties.AmapGeoProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -19,7 +23,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(AmapGeoProperties.class)
-@ConditionalOnClass(WxPayService.class)
+@ConditionalOnClass(GeoService.class)
 @ConditionalOnProperty(prefix = "amap", value = "enabled", matchIfMissing = true)
 public class AmapGeoAutoConfiguration {
     private AmapGeoProperties properties;
