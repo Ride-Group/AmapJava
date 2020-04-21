@@ -34,7 +34,7 @@ public class BaseAmapGeoServiceImplTest {
 
     @Test
     public void testGeo() throws AmapGeoException {
-        GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
+        GeoResult result = this.geoService.geo("中国技术交易大厦");
         assertEquals("1", result.getStatus());
     }
 
