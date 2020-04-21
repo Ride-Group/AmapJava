@@ -62,7 +62,7 @@ public class Poi implements Serializable {
     private Object naviPoiid;
 
     @SerializedName("entr_location")
-    private String entrLocation;
+    private Object entrLocation;
 
     @SerializedName("match")
     private String match;
