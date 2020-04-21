@@ -16,6 +16,14 @@ import java.util.List;
  */
 public class AmapConstants {
     /**
+     * / 商务写字楼|住宅小区|培训机构|学校|知名企业|购物中心|综合酒楼|公园|地铁站
+     "120201|120302|141400|141200|170100|060101|050101|110101|150500"
+     */
+    public static class PoiCode {
+
+    }
+
+    /**
      * 结果代码.
      */
     public static class ResultStatus {
@@ -33,5 +41,6 @@ public class AmapConstants {
     public static class Url {
         public static final String GEO = "/v3/geocode/geo?address=%s&output=json&key=%s";
         public static final String REGEO = "/v3/geocode/regeo?output=json&location=%s&key=%s&radius=1000&extensions=all";
+        public static final String INPUTTIPS = "/v3/assistant/inputtips?output=json&city=%s&keywords=%s&key=%s&datatype=poi";
     }
 }
