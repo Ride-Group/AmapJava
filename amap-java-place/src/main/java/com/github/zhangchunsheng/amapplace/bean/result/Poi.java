@@ -59,7 +59,7 @@ public class Poi implements Serializable {
     private String gridCode;
 
     @SerializedName("navi_poiid")
-    private String naviPoiid;
+    private Object naviPoiid;
 
     @SerializedName("entr_location")
     private String entrLocation;
@@ -74,7 +74,7 @@ public class Poi implements Serializable {
     private String timestamp;
 
     @SerializedName("alias")
-    private String alias;
+    private Object alias;
 
     @SerializedName("indoor_map")
     private String indoorMap;
