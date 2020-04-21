@@ -3,10 +3,8 @@ package com.github.zhangchunsheng.amapplace.bean.result;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import me.zhangchunsheng.amap.common.bean.result.BaseAmapResult;
 import me.zhangchunsheng.amap.common.util.json.AmapGsonBuilder;
-import org.w3c.dom.Document;
 
 import java.util.List;
 
@@ -20,14 +18,14 @@ import java.util.List;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class GeoResult extends BaseAmapResult {
-    private static final long serialVersionUID = -5707576958339934210L;
+public class InputTips extends BaseAmapResult {
+    private static final long serialVersionUID = -7083914585539687746L;
 
-    @SerializedName("geocodes")
-    private List<Geocode> geocodes;
+    @SerializedName("tips")
+    private List<Tips> tips;
 
-    public static GeoResult fromJson(String json) {
-        return AmapGsonBuilder.create().fromJson(json, GeoResult.class);
+    public static InputTips fromJson(String json) {
+        return AmapGsonBuilder.create().fromJson(json, InputTips.class);
     }
 
     @Override

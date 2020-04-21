@@ -41,4 +41,9 @@ public class Regeocode implements Serializable {
             return AmapGsonBuilder.create().toJson(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return AmapGsonBuilder.create().toJson(this);
+    }
 }

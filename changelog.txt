@@ -1,3 +1,7 @@
 2020-04-20
 1. add geo api
 2. add regeo api
+
+2020-04-21
+1. add v3/assistant/inputtips api
+2. add v3/place/text api

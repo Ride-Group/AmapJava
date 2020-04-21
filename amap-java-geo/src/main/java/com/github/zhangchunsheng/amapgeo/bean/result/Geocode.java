@@ -1,5 +1,6 @@
 package com.github.zhangchunsheng.amapgeo.bean.result;
 
+import com.github.zhangchunsheng.amapgeo.util.json.AmapGsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
@@ -41,4 +42,9 @@ public class Geocode implements Serializable {
 
     @SerializedName("level")
     private String level;
+
+    @Override
+    public String toString() {
+        return AmapGsonBuilder.create().toJson(this);
+    }
 }

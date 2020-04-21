@@ -1,14 +1,9 @@
 package com.github.zhangchunsheng.amapplace.service;
 
-import com.github.zhangchunsheng.amapplace.bean.result.GeoResult;
-import com.github.zhangchunsheng.amapplace.bean.result.RegeoResult;
-import me.zhangchunsheng.amap.common.config.AmapConfig;
+import com.github.zhangchunsheng.amapplace.bean.result.InputTips;
+import com.github.zhangchunsheng.amapplace.bean.result.PoiSearchResult;
 import me.zhangchunsheng.amap.common.exception.AmapException;
 import me.zhangchunsheng.amap.common.service.AmapService;
-
-import java.io.File;
-import java.util.Date;
-import java.util.Map;
 
 /**
  * <pre>
@@ -23,8 +18,8 @@ import java.util.Map;
  */
 public interface PlaceService extends AmapService {
 
-    public GeoResult geo(String address) throws AmapException;
+    public InputTips inputTips(String city, String keywords) throws AmapException;
 
-    public RegeoResult regeo(String location) throws AmapException;
+    public PoiSearchResult placeText(String city, String keywords, String page, String offset) throws AmapException;
 
 }

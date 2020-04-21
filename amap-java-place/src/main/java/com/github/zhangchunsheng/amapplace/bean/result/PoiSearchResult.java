@@ -8,14 +8,14 @@ import me.zhangchunsheng.amap.common.util.json.AmapGsonBuilder;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class RegeoResult extends BaseAmapResult {
-    private static final long serialVersionUID = 5408678833978707228L;
+public class PoiSearchResult extends BaseAmapResult {
+    private static final long serialVersionUID = 4587181819499286670L;
 
-    @SerializedName("regeocode")
-    private Regeocode regeocode;
+    @SerializedName("pois")
+    private Poi pois;
 
-    public static RegeoResult fromJson(String json) {
-        return AmapGsonBuilder.create().fromJson(json, RegeoResult.class);
+    public static PoiSearchResult fromJson(String json) {
+        return AmapGsonBuilder.create().fromJson(json, PoiSearchResult.class);
     }
 
     @Override
