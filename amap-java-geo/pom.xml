@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>amap-java-geo</artifactId>
-  <name>AmapJava - Amap Java SDK</name>
+  <name>AmapJava - Geo Java SDK</name>
   <description>高德地图地理编码 Java SDK</description>
 
   <dependencies>

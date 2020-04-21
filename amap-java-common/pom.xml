@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>amap-java-common</artifactId>
-  <name>AmapJava - Amap Java SDK</name>
+  <name>AmapJava - Common Java SDK</name>
   <description>高德地图 Java SDK 公共模块</description>
 
   <dependencies>
