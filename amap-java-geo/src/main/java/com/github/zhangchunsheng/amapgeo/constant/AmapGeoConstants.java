@@ -31,7 +31,7 @@ public class AmapGeoConstants {
     }
 
     public static class Url {
-        public static final String GEO = "/v3/geocode/geo?address=%s&output=json&key=%s";
+        public static final String GEO = "/v3/geocode/geo?address=%s&city=%s&output=json&key=%s";
         public static final String REGEO = "/v3/geocode/regeo?output=json&location=%s&key=%s&radius=1000&extensions=all";
     }
 }

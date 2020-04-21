@@ -60,8 +60,8 @@ public abstract class BaseGeoServiceImpl implements com.github.zhangchunsheng.am
     }
 
     @Override
-    public GeoResult geo(String address) throws AmapGeoException {
-        String responseContent = this.get(String.format(this.getConfig().getGeoBaseUrl() + AmapGeoConstants.Url.GEO, address, this.getConfig().getKey()));
+    public GeoResult geo(String address, String city) throws AmapGeoException {
+        String responseContent = this.get(String.format(this.getConfig().getGeoBaseUrl() + AmapGeoConstants.Url.GEO, address, city, this.getConfig().getKey()));
         return GeoResult.fromJson(responseContent);
     }
 

@@ -39,7 +39,7 @@ public interface GeoService {
 
     public String get(String url) throws AmapGeoException;
 
-    public GeoResult geo(String address) throws AmapGeoException;
+    public GeoResult geo(String address, String city) throws AmapGeoException;
 
     public RegeoResult regeo(String location) throws AmapGeoException;
 
