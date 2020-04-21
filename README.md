@@ -12,13 +12,13 @@ GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
 ```xml
 <dependency>
     <groupId>com.github.zhangchunsheng</groupId>
-    <artifactId>amap-java</artifactId>
-    <version>1.0.0</version>
+    <artifactId>amap-java-geo</artifactId>
+    <version>1.0.1</version>
 </dependency>
 <dependency>
     <groupId>com.github.zhangchunsheng</groupId>
-    <artifactId>amap-java-geo</artifactId>
-    <version>1.0.0</version>
+    <artifactId>amap-java-place</artifactId>
+    <version>1.0.1</version>
 </dependency>
 ```
 
