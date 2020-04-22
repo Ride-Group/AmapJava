@@ -23,7 +23,7 @@ public class Poi implements Serializable {
     private String typeCode;
 
     @SerializedName("address")
-    private String address;
+    private Object address;
 
     @SerializedName("location")
     private String location;
