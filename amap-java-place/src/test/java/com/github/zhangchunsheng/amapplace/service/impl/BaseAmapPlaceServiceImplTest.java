@@ -34,7 +34,7 @@ public class BaseAmapPlaceServiceImplTest {
 
     @Test
     public void testPlaceText() throws AmapException {
-        PoiSearchResult result = this.placeService.placeText("北京", "nss", "1", "20");
+        PoiSearchResult result = this.placeService.placeText("北京", "g", "1", "20");
         assertEquals("1", result.getStatus());
     }
 }

@@ -71,7 +71,7 @@ public class Poi implements Serializable {
     private String recommend;
 
     @SerializedName("timestamp")
-    private String timestamp;
+    private Object timestamp;
 
     @SerializedName("alias")
     private Object alias;
