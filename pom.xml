@@ -37,6 +37,7 @@
     <module>amap-java-common</module>
     <module>amap-java-geo</module>
     <module>amap-java-place</module>
+    <module>amap-java-direction</module>
     <module>spring-boot-starters</module>
   </modules>
 

@@ -43,5 +43,6 @@ public class AmapConstants {
         public static final String REGEO = "/v3/geocode/regeo?output=json&location=%s&key=%s&radius=1000&extensions=all";
         public static final String INPUTTIPS = "/v3/assistant/inputtips?output=json&city=%s&keywords=%s&key=%s&datatype=poi";
         public static final String PLACE_TEXT = "/v3/place/text?city=%s&keywords=%s&output=json&page=%s&offset=%s&key=%s&extensions=all";
+        public static final String DISTANCE = "/v3/distance?origins=%s&destination=%s&type=%s&output=json&key=%s";
     }
 }

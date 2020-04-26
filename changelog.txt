@@ -5,3 +5,6 @@
 2020-04-21
 1. add v3/assistant/inputtips api
 2. add v3/place/text api
+
+2020-04-26
+1. add v3/distance api
