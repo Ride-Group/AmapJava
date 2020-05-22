@@ -1,9 +1,9 @@
-package com.zhangchunsheng.spring.starter.amapjava.geo.config;
+package com.github.zhangchunsheng.spring.starter.amapjava.geo.config;
 
 import com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig;
 import com.github.zhangchunsheng.amapgeo.service.GeoService;
 import com.github.zhangchunsheng.amapgeo.service.impl.GeoServiceImpl;
-import com.zhangchunsheng.spring.starter.amapjava.geo.properties.AmapGeoProperties;
+import com.github.zhangchunsheng.spring.starter.amapjava.geo.properties.AmapGeoProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

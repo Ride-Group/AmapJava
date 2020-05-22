@@ -1,4 +1,4 @@
-package com.zhangchunsheng.spring.starter.amapjava.geo.properties;
+package com.github.zhangchunsheng.spring.starter.amapjava.geo.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
