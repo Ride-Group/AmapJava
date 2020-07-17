@@ -3,7 +3,7 @@ package me.zhangchunsheng.amap.common.testbase;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
- * The type Xml wx pay config.
+ * The type Xml Amap config.
  */
 @XStreamAlias("xml")
 public class XmlAmapConfig extends me.zhangchunsheng.amap.common.config.AmapConfig {

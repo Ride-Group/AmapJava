@@ -31,7 +31,7 @@ public abstract class BaseServiceImpl implements me.zhangchunsheng.amap.common.s
      */
     final Logger log = LoggerFactory.getLogger(this.getClass());
     /**
-     * The constant wxApiData.
+     * The constant amapApiData.
      */
     static ThreadLocal<AmapApiData> amapApiData = new ThreadLocal<>();
 

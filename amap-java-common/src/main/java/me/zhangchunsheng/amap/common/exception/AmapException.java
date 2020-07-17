@@ -64,10 +64,10 @@ public class AmapException extends Exception {
     }
 
     /**
-     * 通过BaseWxPayResult生成异常对象.
+     * 通过BaseAmapResult生成异常对象.
      *
      * @param baseResult the base result
-     * @return the wx pay exception
+     * @return the amap exception
      */
     public static AmapException from(me.zhangchunsheng.amap.common.bean.result.BaseAmapResult baseResult) {
         return AmapException.newBuilder()

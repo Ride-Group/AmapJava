@@ -35,7 +35,7 @@ public abstract class BaseGeoServiceImpl implements com.github.zhangchunsheng.am
      */
     final Logger log = LoggerFactory.getLogger(this.getClass());
     /**
-     * The constant wxApiData.
+     * The constant amapApiData.
      */
     static ThreadLocal<AmapGeoApiData> amapApiData = new ThreadLocal<>();
 

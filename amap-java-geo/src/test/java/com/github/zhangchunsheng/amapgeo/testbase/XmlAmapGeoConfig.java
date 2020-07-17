@@ -3,7 +3,7 @@ package com.github.zhangchunsheng.amapgeo.testbase;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
- * The type Xml wx pay config.
+ * The type Xml amap geo config.
  */
 @XStreamAlias("xml")
 public class XmlAmapGeoConfig extends com.github.zhangchunsheng.amapgeo.config.AmapGeoConfig {

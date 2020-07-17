@@ -64,10 +64,10 @@ public class AmapGeoException extends Exception {
     }
 
     /**
-     * 通过BaseWxPayResult生成异常对象.
+     * 通过BaseAmapResult生成异常对象.
      *
      * @param geoBaseResult the geo base result
-     * @return the wx pay exception
+     * @return the amap geo exception
      */
     public static AmapGeoException from(com.github.zhangchunsheng.amapgeo.bean.result.BaseAmapGeoResult geoBaseResult) {
         return AmapGeoException.newBuilder()
