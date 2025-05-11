@@ -62,7 +62,7 @@ GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
 			</td>
 			<td align="right" valign="middle">
 				<!--<img height="120" src="https://wx2.sinaimg.cn/mw690/46b94231ly1ge0po9ko70j20fk0fkjsc.jpg">-->
-				<img height="120" src=""https://aigc.7otech.com/wp-content/uploads/2025/05/fenxiang.jpeg>
+				<img height="120" src="https://aigc.7otech.com/wp-content/uploads/2025/05/fenxiang.jpeg">
 			</td>
 			<td align="center" valign="middle">
 				<a href="https://www.vultr.com/?ref=8546025-6G" target="_blank">
@@ -95,7 +95,7 @@ GeoResult result = this.geoService.geo("北京市朝阳区阜通东大街6号");
 			</td>
 			<td align="center" valign="middle">
 				<!--<img height="120" src="https://wx4.sinaimg.cn/mw690/46b94231ly1ge0okecldyj20e80e8n0c.jpg">-->
-				<img height="120" src=""https://aigc.7otech.com/wp-content/uploads/2025/05/wechat.jpeg>
+				<img height="120" src="https://aigc.7otech.com/wp-content/uploads/2025/05/wechat.jpeg">
 			</td>
 		</tr>
 	</tbody>
